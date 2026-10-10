@@ -320,29 +320,21 @@ export default function App() {
         {/* LIVE MATCHES */}
         {activeTab === 'live' && (
           <LiveMatches
-            predictions={predictions}
-            loading={loadingPredictions}
-            onRefresh={fetchPredictions}
-            onOpenApiModal={() => setApiModalOpen(true)}
             onAddToBetslip={handleAddToBetslip}
             onOpenAiAnalysis={(fixture) => setAiFixture(fixture)}
-            onNavigateToAdmin={() => setActiveTab('admin')}
+            betslipItems={betslipItems}
+            isAdminLoggedIn={isAdminLoggedIn}
           />
         )}
 
         {/* UPCOMING */}
         {activeTab === 'upcoming' && (
-          <PredictionList
-            predictions={predictions}
-            loading={loadingPredictions}
-            onRefresh={fetchPredictions}
+          <LiveMatches
+            initialFilter="upcoming"
             onAddToBetslip={handleAddToBetslip}
             onOpenAiAnalysis={(fixture) => setAiFixture(fixture)}
-            onOpenBookmakers={(fixture) => setBookmakerFixture(fixture)}
-            onNavigateToAdmin={() => setActiveTab('admin')}
-            onQuickSeed={handleSeedMatches}
-            onNavigateToChat={() => setActiveTab('chat')}
             betslipItems={betslipItems}
+            isAdminLoggedIn={isAdminLoggedIn}
           />
         )}
 
