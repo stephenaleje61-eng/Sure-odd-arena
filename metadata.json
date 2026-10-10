@@ -1,0 +1,6 @@
+{
+  "name": "Sure Odd Arena - Football Predictions & Live Arena",
+  "description": "Production-ready football prediction platform with real odds, live match insights, bookmaker comparisons, and real-time chat.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
