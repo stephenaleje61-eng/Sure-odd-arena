@@ -10,9 +10,11 @@ import {
   Sparkles,
   ArrowRight,
   ExternalLink,
-  Flame
+  Flame,
+  MessageCircle
 } from 'lucide-react';
 import { ParsedPrediction } from '../types';
+import { WHATSAPP_VIP_URL } from './Header';
 
 interface VipSectionProps {
   predictions: ParsedPrediction[];
@@ -119,6 +121,29 @@ export const VipSection: React.FC<VipSectionProps> = ({
                 Subscribers and testers can use <code>VIP2024</code> to preview the full suite of premium predictions.
               </p>
             </div>
+
+            {/* Direct WhatsApp VIP Group Link Card */}
+            <a
+              href={WHATSAPP_VIP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 p-3.5 bg-gradient-to-r from-[#0d2a17] to-[#12381f] border border-[#25D366]/40 hover:border-[#25D366] rounded-xl flex items-center justify-between transition-all group/wa text-left shadow-lg"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-xl bg-[#25D366] text-black flex items-center justify-center font-bold shrink-0">
+                  <MessageCircle className="w-5 h-5 fill-black" />
+                </div>
+                <div>
+                  <span className="font-arena font-bold text-sm text-white block">
+                    Join VIP WhatsApp Predictions
+                  </span>
+                  <span className="text-[11px] text-gray-300">
+                    Get 100% sure banker tips and fixed odds on WhatsApp
+                  </span>
+                </div>
+              </div>
+              <ExternalLink className="w-4 h-4 text-[#25D366] group-hover/wa:translate-x-0.5 transition-transform shrink-0" />
+            </a>
           </div>
 
           {/* Blurred Teaser Behind */}

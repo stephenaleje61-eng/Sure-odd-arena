@@ -16,8 +16,12 @@ import {
   X,
   UserCheck,
   User,
-  UserPlus
+  UserPlus,
+  MessageCircle,
+  ExternalLink
 } from 'lucide-react';
+
+export const WHATSAPP_VIP_URL = 'https://chat.whatsapp.com/HTpr2ABAmU47puBpmngjCa?s=cl&p=a&mlu=4&ilr=4';
 
 export type NavTab =
   | 'home'
@@ -68,6 +72,63 @@ export const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="sticky top-0 z-30 bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#1f2228]">
+      {/* Moving WhatsApp VIP Prediction Marquee Ticker */}
+      <div className="bg-gradient-to-r from-[#07190d] via-[#0d2a19] to-[#07190d] border-b border-[#25D366]/40 py-1.5 px-3 select-none overflow-hidden relative group">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2.5">
+          {/* Static Left Badge */}
+          <a
+            href={WHATSAPP_VIP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba59] text-black font-black text-[10px] sm:text-[11px] px-2.5 py-0.5 rounded-full shadow-md transition-transform hover:scale-105 z-10"
+            title="Join VIP Prediction WhatsApp Group"
+          >
+            <MessageCircle className="w-3.5 h-3.5 fill-black" />
+            <span className="tracking-wide">VIP WHATSAPP</span>
+          </a>
+
+          {/* Continuous Moving Marquee */}
+          <a
+            href={WHATSAPP_VIP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 overflow-hidden whitespace-nowrap flex items-center cursor-pointer text-xs font-semibold text-gray-200 hover:text-white"
+            title="Click to join VIP WhatsApp for 100% Sure Predictions"
+          >
+            <div className="animate-marquee-smooth flex items-center gap-8 py-0.5">
+              {[1, 2].map((loop) => (
+                <div key={loop} className="flex items-center gap-6 text-[11px] sm:text-xs">
+                  <span className="flex items-center gap-1.5 text-white font-bold">
+                    🔥 <span className="text-[#ffd700]">JOIN OUR VIP WHATSAPP PREDICTION GROUP</span>
+                  </span>
+                  <span className="text-[#25D366] font-extrabold">
+                    ★ 100% SURE VIP PREDICTIONS, 2+ ODDS DAILY BANKER & FIXED ODD DROPS
+                  </span>
+                  <span className="text-gray-300">
+                    📈 Over 95% Win Accuracy · High-Roller Slips · Daily Winning Multipliers
+                  </span>
+                  <span className="text-[#ffd700] underline flex items-center gap-1 font-bold">
+                    👉 Click to Join: chat.whatsapp.com/HTpr2ABAmU47puBpmngjCa
+                  </span>
+                  <span className="text-gray-500">|</span>
+                </div>
+              ))}
+            </div>
+          </a>
+
+          {/* Static Right CTA */}
+          <a
+            href={WHATSAPP_VIP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 hidden md:inline-flex items-center gap-1 px-3 py-0.5 bg-[#25D366] hover:bg-[#20ba59] text-black font-extrabold text-[11px] rounded-full shadow-md transition-all hover:scale-105 z-10"
+          >
+            <span>JOIN VIP GROUP</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+      </div>
+
       {/* Top Bar for ticker and quick actions */}
       <div className="bg-[#101114] border-b border-[#181a20] px-4 py-1 text-xs text-gray-400 flex items-center justify-between">
         <div className="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
@@ -235,6 +296,20 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#101114] border-b border-[#22252c] px-4 py-3 space-y-1">
+          {/* Mobile WhatsApp VIP Link */}
+          <a
+            href={WHATSAPP_VIP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full text-left px-3 py-2.5 rounded-lg text-xs font-bold flex items-center justify-between bg-[#0e2716] border border-[#25D366]/40 text-[#25D366] mb-2"
+          >
+            <div className="flex items-center gap-2">
+              <MessageCircle className="w-4 h-4 text-[#25D366]" />
+              <span>Join VIP WhatsApp Group</span>
+            </div>
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+
           {/* Mobile Sign Up Button */}
           <button
             onClick={() => {

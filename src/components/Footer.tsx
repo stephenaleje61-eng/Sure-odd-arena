@@ -105,7 +105,15 @@ export const Footer: React.FC<FooterProps> = ({
               <li className="text-gray-300">Bet9ja Premier Odds</li>
             </ul>
 
-            <div className="mt-4 pt-3 border-t border-[#181a20] space-y-1">
+            <div className="mt-4 pt-3 border-t border-[#181a20] space-y-1.5">
+              <a
+                href="https://chat.whatsapp.com/HTpr2ABAmU47puBpmngjCa?s=cl&p=a&mlu=4&ilr=4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#25D366] hover:underline font-bold block text-[11px]"
+              >
+                💬 Join VIP WhatsApp Group
+              </a>
               <button
                 onClick={onOpenDeployModal}
                 className="text-[#ffd700] hover:underline block text-[11px]"
